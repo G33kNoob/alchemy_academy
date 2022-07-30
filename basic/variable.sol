@@ -33,3 +33,10 @@ contract Character{
     // string
     string public Char3 = "ini string ";
 }
+contract EnumData{
+    enum Snacks{Wafello, Nissin, Cokicoki}
+    // get value bh enum
+    function getIndexValue() public pure returns(Snacks) {
+        return Snacks.Nissin;
+    }
+}
