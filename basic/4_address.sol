@@ -18,12 +18,23 @@ contract AddressContract{
         return myAddress;
     }
     // metode pengiriman kontrak ada 2 
+    uint ReceivedAmount=0;
     //1. transfer 
     function txTransfer(address payable _address, uint amount) public {
         _address.transfer(amount);
+        ReceivedAmount =ReceivedAmount-amount;
     }
     //2. send
     function txSend(address payable _address, uint amount)public returns(bool){
         _address.send(amount);
+                ReceivedAmount =ReceivedAmount-amount;
+
     }
+    function ReceiveEther()payable public{
+        ReceivedAmount =msg.value + ReceivedAmount;
+    }
+    function GetValue()public view returns(uint){
+        return ReceivedAmount;
+    }
+
 }
