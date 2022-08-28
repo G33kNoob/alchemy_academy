@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 contract ContractFunction{
     uint num;
-    // pure 
+    // pure adalah fungsi yang mengembalikan nilai secara langsung tanpa menyentuh data
     function pureFunction()public pure returns(string memory){
         return "hello ahsan";
     }
