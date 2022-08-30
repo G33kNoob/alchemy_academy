@@ -16,8 +16,17 @@ contract Typedata {
     // bytes data 
     bytes1 a = 0xb5;
     bytes1 b = 0x56;
-    
+    // enum
+    enum ActionChoices { GoLeft, GoRight, GoStraight, SitStill }
+    // ActionChoices choice;
+    ActionChoices constant defaultChoice = ActionChoices.GoStraight;
+
     // constant
     address public constant MY_ADDRESS = 0x777788889999AaAAbBbbCcccddDdeeeEfFFfCcCc; //default 0x0000000000000000000000000000000000000000
     uint public constant MY_UINT = 123;
 }
+
+// type variable data 
+// 1. local storage (data di tempatkan kedalam fungsi dan tidak disimpan kedalam blockchain)
+// 2. State (ditaruh diluar fungsi di simpan kedalam blockchain)
+
